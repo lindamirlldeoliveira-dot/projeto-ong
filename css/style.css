@@ -45,6 +45,11 @@ body {
     padding: var(--sp-4);
 }
 
+/* GARANTE QUE HEADER, MAIN E FOOTER CENTRALIZEM */
+header, main, footer {
+    grid-column: 1 / -1;
+}
+
 /* Breakpoints */
 @media (max-width: 1200px) {
     .container {
@@ -85,10 +90,7 @@ header {
     align-items: center;
     padding: var(--sp-4) var(--sp-2);
     background-color: #fff;
-
-    /* Sombra moderna */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-
     border-radius: 8px;
     margin-bottom: var(--sp-4);
 }
@@ -118,13 +120,12 @@ header h1 {
     transition: 0.3s ease;
 }
 
-/* Hover bonito */
 .menu a:hover {
     background-color: var(--cor-acento);
     color: #fff;
 }
 
-/* Responsivo */
+/* Responsivo do menu */
 @media (max-width: 576px) {
     header {
         flex-direction: column;
@@ -145,6 +146,9 @@ header h1 {
     }
 }
 
+/* ============================
+    FORMULÁRIOS
+============================ */
 form {
     display: flex;
     flex-direction: column;
@@ -155,7 +159,6 @@ form {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Fieldsets */
 fieldset {
     border: 2px solid var(--cor-primaria);
     padding: var(--sp-4);
@@ -170,7 +173,6 @@ legend {
     padding: 0 var(--sp-2);
 }
 
-/* Labels */
 label {
     font-size: var(--fs-md);
     font-weight: bold;
@@ -178,7 +180,6 @@ label {
     display: block;
 }
 
-/* Inputs */
 input {
     width: 100%;
     padding: var(--sp-2);
@@ -188,14 +189,12 @@ input {
     transition: 0.3s;
 }
 
-/* foco */
 input:focus {
     border-color: var(--cor-primaria);
     box-shadow: 0 0 5px var(--cor-acento);
     outline: none;
 }
 
-/* Validação */
 input:invalid {
     border-color: var(--cor-erro);
 }
@@ -204,7 +203,6 @@ input:valid {
     border-color: var(--cor-sucesso);
 }
 
-/* Botão */
 button {
     background: var(--cor-primaria);
     color: white;
@@ -217,29 +215,28 @@ button {
     transition: 0.3s;
 }
 
-/* Hover */
 button:hover {
     background: var(--cor-hover);
 }
 
-/* Active */
 button:active {
     transform: scale(0.97);
 }
 
-/* Disabled */
 button:disabled {
     background: #aaa;
     cursor: not-allowed;
 }
 
-/* Responsivo */
 @media (max-width: 576px) {
     form {
         padding: var(--sp-3);
     }
 }
 
+/* ============================
+    SEÇÕES DO MAIN
+============================ */
 main section {
     background: #fff;
     padding: var(--sp-4);
@@ -254,7 +251,7 @@ main h2 {
     margin-top: 0;
 }
 
-/* IMAGEM DA HOMEPAGE */
+/* IMAGENS DO MAIN */
 main figure {
     text-align: center;
     margin-top: var(--sp-5);
