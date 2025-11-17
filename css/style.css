@@ -29,15 +29,12 @@
     GLOBAL
 ============================ */
 body {
-    background-color: var(--cor-neutro-claro);
+    background: var(--cor-neutro-claro);
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ============================
-    GRID PRINCIPAL
-============================ */
 .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -49,89 +46,89 @@ header, main, footer {
     grid-column: 1 / -1;
 }
 
-/* Breakpoints */
-@media (max-width: 992px) { .container { grid-template-columns: repeat(8, 1fr); } }
-@media (max-width: 768px) { .container { grid-template-columns: repeat(6, 1fr); } }
-@media (max-width: 576px) { .container { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 400px) { .container { grid-template-columns: repeat(2, 1fr); } }
-
 /* ============================
-    HEADER
+    HEADER BONITO RESTAURADO
 ============================ */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--sp-4) var(--sp-2);
-    background: white;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    background: #fff;
     border-radius: 8px;
     margin-bottom: var(--sp-4);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
 header h1 {
-    font-size: var(--fs-xxl);
+    margin: 0;
     color: var(--cor-primaria);
+    font-size: var(--fs-xxl);
 }
 
 /* ============================
-    MENU DESKTOP
+    MENU ORIGINAL BONITO
 ============================ */
 .menu ul {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: var(--sp-3);
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-.menu a, .dropdown-btn {
+.menu a {
     text-decoration: none;
+    padding: var(--sp-2) var(--sp-3);
     font-size: var(--fs-md);
     font-weight: bold;
-    padding: var(--sp-2) var(--sp-3);
     color: var(--cor-preto);
     border-radius: 6px;
     transition: 0.3s;
-    cursor: pointer;
 }
 
 .menu a:hover {
     background: var(--cor-acento);
-    color: white;
+    color: #fff;
 }
 
 /* ============================
-   DROPDOWN — DESKTOP
+    DROPDOWN — DESKTOP
 ============================ */
 .dropdown {
     position: relative;
 }
 
+.dropdown-btn {
+    cursor: pointer;
+}
+
 .dropdown-menu {
-    display: none;
     position: absolute;
     top: 45px;
     left: 0;
     background: white;
-    border-radius: 8px;
     padding: 10px 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    width: 170px;
     list-style: none;
-    width: 180px;
+    display: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .dropdown-menu li a {
     display: block;
     padding: 10px 20px;
+    color: var(--cor-preto);
+    text-decoration: none;
 }
 
 .dropdown-menu li a:hover {
     background: var(--cor-acento);
-    color: white;
+    color: #fff;
 }
 
-/* HOVER DESKTOP */
+/* Hover só no desktop */
 @media (min-width: 769px) {
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -139,7 +136,7 @@ header h1 {
 }
 
 /* ============================
-   HAMBURGUER — MOBILE
+    MENU HAMBURGUER — MOBILE
 ============================ */
 .hamburger {
     display: none;
@@ -153,30 +150,30 @@ header h1 {
 
     .hamburger {
         display: block;
-        color: var(--cor-preto);
     }
 
     .menu ul {
         display: none;
         flex-direction: column;
-        background: white;
         width: 100%;
+        background: white;
         padding: var(--sp-3);
         border-radius: 8px;
         margin-top: var(--sp-2);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
 
     .menu.open ul {
         display: flex;
     }
 
-    /* DROPDOWN MOBILE */
+    /* dropdown no mobile */
     .dropdown-menu {
         position: static;
+        width: 100%;
+        background: var(--cor-neutro-claro);
         box-shadow: none;
         padding: 0;
-        margin-top: 8px;
     }
 
     .dropdown.open .dropdown-menu {
@@ -185,10 +182,10 @@ header h1 {
 }
 
 /* ============================
-    SEÇÕES
+    SEÇÕES DO MAIN (BONITAS)
 ============================ */
 main section {
-    background: white;
+    background: #fff;
     padding: var(--sp-4);
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -201,19 +198,18 @@ main h2 {
 }
 
 /* ============================
-    IMAGENS
+    IMAGENS BONITAS
 ============================ */
-main figure { text-align: center; }
 main img {
     max-width: 600px;
     width: 100%;
     border-radius: 12px;
-    border: 3px solid var(--cor-acento);
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    border: 3px solid var(--cor-acento);
 }
 
 /* ============================
-    CARDS
+    CARDS DOS PROJETOS (BONITOS)
 ============================ */
 .cards-projetos {
     display: grid;
@@ -222,7 +218,7 @@ main img {
 }
 
 .card {
-    background: white;
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -230,7 +226,8 @@ main img {
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.15);
 }
 
 .card img {
@@ -239,123 +236,21 @@ main img {
     object-fit: cover;
 }
 
-.card-content { padding: var(--sp-4); }
-
-.tag {
-    padding: 4px 12px;
-    border-radius: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: var(--fs-sm);
+.card-content {
+    padding: var(--sp-4);
 }
-.tag.verde { background: #2ECC71; }
-.tag.azul { background: #2A6F97; }
-.tag.vermelho { background: #E63946; }
-.tag.roxo { background: #6A0572; }
 
+/* botão do card */
 .btn-card {
+    display: inline-block;
+    text-decoration: none;
     background: var(--cor-primaria);
     color: white;
     padding: var(--sp-2) var(--sp-3);
     border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-}
-.btn-card:hover { background: var(--cor-hover); }
-
-/* ---- DROPDOWN DESKTOP ---- */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-btn {
-    cursor: pointer;
     font-weight: bold;
 }
 
-.dropdown-menu,
-.submenu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background: white;
-    padding: 10px 0;
-    list-style: none;
-    width: 180px;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    z-index: 999;
-}
-
-.dropdown-menu li a,
-.submenu li a {
-    display: block;
-    padding: 10px 20px;
-    color: var(--cor-preto);
-    text-decoration: none;
-}
-
-.dropdown-menu li a:hover,
-.submenu li a:hover {
-    background: var(--cor-acento);
-    color: white;
-}
-
-/* Hover funciona só no DESKTOP */
-@media (min-width: 769px) {
-    .dropdown:hover .dropdown-menu,
-    .dropdown:hover .submenu {
-        display: block;
-    }
-}
-
-/* ---- BOTÃO HAMBURGUER ---- */
-.hamburger {
-    display: none;
-    font-size: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-/* ---- MENU MOBILE ---- */
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        color: var(--cor-preto);
-    }
-
-    .menu ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: 10px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    /* Quando o JS adiciona .open no menu */
-    .menu.open ul {
-        display: flex;
-    }
-
-    /* DROPDOWN MOBILE */
-    .dropdown-menu,
-    .submenu {
-        position: static;
-        box-shadow: none;
-        width: 100%;
-        padding: 0;
-        margin-top: 8px;
-    }
-
-    .dropdown.open .dropdown-menu,
-    .dropdown.open .submenu {
-        display: block;
-    }
+.btn-card:hover {
+    background: var(--cor-hover);
 }
