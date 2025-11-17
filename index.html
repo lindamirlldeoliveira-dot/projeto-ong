@@ -9,51 +9,50 @@
 </head>
 
 <body>
+
 <div class="container">
 
-    <!-- HEADER PROFISSIONAL -->
+    <!-- ====================== HEADER ====================== -->
     <header>
 
-    <h1>ONG Esperança Viva</h1>
+        <h1>ONG Esperança Viva</h1>
 
-    <!-- BOTÃO HAMBURGUER -->
-    <button class="hamburger" id="btn-mobile">
-        ☰
-    </button>
+        <!-- Botão Hambúrguer -->
+        <button class="hamburger" id="btn-mobile">☰</button>
 
-    <!-- MENU PRINCIPAL -->
-    <nav class="menu" id="menu">
-        <ul>
+        <!-- Menu Principal -->
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
 
-            <li><a href="index.html">Início</a></li>
+                <!-- DROPDOWN -->
+                <li class="dropdown">
+                    <span class="dropdown-btn">Projetos ▼</span>
 
-            <!-- DROPDOWN -->
-            <li class="dropdown">
-    <span class="dropdown-btn">Projetos ▼</span>
-    <ul class="dropdown-menu">
-        <li><a href="projetos.html#sustentavel">Sustentável</a></li>
-        <li><a href="projetos.html#doacoes">Doações</a></li>
-        <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
-    </ul>
-</li>
+                    <ul class="dropdown-menu">
+                        <li><a href="projetos.html#sustentavel">Sustentável</a></li>
+                        <li><a href="projetos.html#doacoes">Doações</a></li>
+                        <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                    </ul>
+                </li>
 
-            <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-    </nav>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
 
-</header>
+    </header>
 
-
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- ====================== MAIN ====================== -->
     <main>
 
         <!-- QUEM SOMOS -->
         <section>
             <h2>Quem Somos</h2>
             <p>
-                Somos uma organização dedicada a transformar vidas por meio de projetos sociais, 
-                educação, cuidado comunitário e programas de voluntariado. Trabalhamos para 
-                construir oportunidades e fortalecer famílias em situação de vulnerabilidade.
+                Somos uma organização dedicada a transformar vidas por meio de projetos sociais,
+                educação, cuidado comunitário e programas de voluntariado.
+                Trabalhamos para construir oportunidades e fortalecer famílias
+                em situação de vulnerabilidade.
             </p>
         </section>
 
@@ -61,7 +60,7 @@
         <section>
             <h2>Missão</h2>
             <p>
-                Promover o bem-estar de comunidades carentes, oferecendo apoio humanitário, 
+                Promover o bem-estar de comunidades carentes, oferecendo apoio humanitário,
                 ações socioeducativas e iniciativas que impactem positivamente a vida das pessoas.
             </p>
         </section>
@@ -79,29 +78,27 @@
             <figcaption>Nossas atividades em campo</figcaption>
         </figure>
 
+        <!-- SPA NAV -->
         <div id="spa-nav" class="spa-nav">
-    <button onclick="carregarSecao('home')">Início</button>
-    <button onclick="carregarSecao('missao')">Missão</button>
-    <button onclick="carregarSecao('contato')">Contato</button>
-</div>
+            <button onclick="carregarSecao('home')">Início</button>
+            <button onclick="carregarSecao('missao')">Missão</button>
+            <button onclick="carregarSecao('contato')">Contato</button>
+        </div>
 
-<div id="conteudo-spa"></div>
+        <div id="conteudo-spa"></div>
 
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- ====================== FOOTER ====================== -->
     <footer>
         <p>© 2025 ONG Esperança Viva</p>
     </footer>
 
 </div>
-    <script src="js/menu.js"></script>
-    <script src="js/spa.js"></script>
-    <script src="js/script.js"></script>
+
+<!-- ====================== SCRIPTS ====================== -->
+<script src="js/menu.js"></script>
+<script src="js/spa.js"></script>
+
 </body>
 </html>
-
-
-
-
-
