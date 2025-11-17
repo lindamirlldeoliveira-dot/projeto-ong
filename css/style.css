@@ -270,3 +270,89 @@ main figcaption {
     font-size: var(--fs-md);
     color: var(--cor-hover);
 }
+
+/* ============================
+   CARDS DE PROJETOS
+============================ */
+.cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--sp-4);
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Imagem */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Conteúdo */
+.card-content {
+    padding: var(--sp-4);
+}
+
+/* Título */
+.card-content h3 {
+    font-size: var(--fs-lg);
+    margin: 0 0 var(--sp-2);
+    color: var(--cor-secundaria);
+}
+
+/* Parágrafo */
+.card-content p {
+    font-size: var(--fs-md);
+    margin-bottom: var(--sp-3);
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-3);
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: var(--fs-sm);
+    color: white;
+    font-weight: bold;
+}
+
+/* Cores das tags */
+.tag.verde { background: #2ECC71; }
+.tag.azul { background: #2A6F97; }
+.tag.vermelho { background: #E63946; }
+.tag.roxo { background: #6A0572; }
+
+/* BOTÃO DO CARD */
+.btn-card {
+    display: inline-block;
+    background: var(--cor-primaria);
+    color: white;
+    padding: var(--sp-2) var(--sp-3);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-card:hover {
+    background: var(--cor-hover);
+}
