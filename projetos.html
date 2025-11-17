@@ -28,7 +28,7 @@
     <main>
 
         <!-- INTRO -->
-        <section>
+        <section class="card">
             <h2>Nossos Projetos</h2>
             <p>
                 Conheça os projetos realizados pela ONG e descubra como você pode apoiar nossas ações 
@@ -36,43 +36,70 @@
             </p>
         </section>
 
-        <!-- PROJETO 1 -->
-        <section>
-            <h2>Projeto Comunidade Sustentável</h2>
-            <p>
-                Atividades voltadas para educação ambiental, reciclagem e implantação de hortas comunitárias,
-                promovendo autonomia e sustentabilidade.
-            </p>
+        <!-- CARDS DE PROJETOS -->
+        <div class="cards-projetos">
 
-            <figure>
+            <!-- PROJETO 1 -->
+            <div class="card">
                 <img src="imagens/projeto1.jpeg" alt="Projeto Comunidade Sustentável">
-                <figcaption>Oficina de hortas comunitárias</figcaption>
-            </figure>
-        </section>
 
-        <!-- PROJETO 2 -->
-        <section>
-            <h2>Campanha de Doações</h2>
-            <p>
-                Arrecadação de roupas, alimentos e itens essenciais para famílias em situação de vulnerabilidade.
-            </p>
+                <div class="card-content">
+                    <h3>Comunidade Sustentável</h3>
 
-            <figure>
+                    <div class="tags">
+                        <span class="tag verde">Ambiental</span>
+                        <span class="tag azul">Educação</span>
+                    </div>
+
+                    <p>
+                        Atividades voltadas para educação ambiental, reciclagem e implantação de hortas comunitárias.
+                    </p>
+
+                    <a href="cadastro.html" class="btn-card">Apoiar Projeto</a>
+                </div>
+            </div>
+
+            <!-- PROJETO 2 -->
+            <div class="card">
                 <img src="imagens/doacao.jpg" alt="Campanha de Doações">
-                <figcaption>Doações distribuídas pela equipe voluntária</figcaption>
-            </figure>
-        </section>
 
-        <!-- VOLUNTARIADO -->
-        <section>
-            <h2>Voluntariado</h2>
-            <p>
-                Participe ativamente das nossas ações sociais e faça a diferença na vida de quem mais precisa.
-            </p>
-            <p>
-                <a href="cadastro.html">Clique aqui para participar como voluntário!</a>
-            </p>
-        </section>
+                <div class="card-content">
+                    <h3>Campanha de Doações</h3>
+
+                    <div class="tags">
+                        <span class="tag vermelho">Assistência</span>
+                        <span class="tag azul">Voluntariado</span>
+                    </div>
+
+                    <p>
+                        Arrecadação de roupas, alimentos e itens essenciais para famílias em situação de vulnerabilidade.
+                    </p>
+
+                    <a href="cadastro.html" class="btn-card">Quero Ajudar</a>
+                </div>
+            </div>
+
+            <!-- PROJETO 3 -->
+            <div class="card">
+                <img src="imagens/ong.jpg" alt="Voluntariado">
+
+                <div class="card-content">
+                    <h3>Voluntariado</h3>
+
+                    <div class="tags">
+                        <span class="tag roxo">Ação Social</span>
+                        <span class="tag azul">Doação</span>
+                    </div>
+
+                    <p>
+                        Participe ativamente das nossas ações sociais e faça a diferença na vida de quem mais precisa.
+                    </p>
+
+                    <a href="cadastro.html" class="btn-card">Participar</a>
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
