@@ -419,22 +419,114 @@ main figcaption {
     }
 
     .menu {
-        display: none;
-        width: 100%;
-    }
+    position: relative;
+}
 
-    .menu.open {
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: var(--sp-3);
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================
+   DROPDOWN (DESKTOP)
+============================ */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: white;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    width: 180px;
+    z-index: 999;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--cor-preto);
+}
+
+.submenu li a:hover {
+    background: var(--cor-acento);
+    color: white;
+}
+
+/* Hover só no DESKTOP */
+@media (min-width: 769px) {
+    .dropdown:hover .submenu {
         display: block;
-        margin-top: 16px;
+    }
+}
+
+/* ============================
+   MENU HAMBÚRGUER (MOBILE)
+============================ */
+
+.hamburger {
+    font-size: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* Estilos MOBILE */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        color: var(--cor-preto);
     }
 
     .menu ul {
+        display: none;
         flex-direction: column;
-        gap: 12px;
+        background: white;
+        width: 100%;
+        padding: var(--sp-3);
+        border-radius: 8px;
+        margin-top: var(--sp-2);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
+    /* Quando o JS adiciona "open" → menu aparece */
+    .menu.open ul {
+        display: flex;
+    }
+
+    /* DROPDOWN MOBILE */
     .submenu {
         position: static;
+        display: none;
         box-shadow: none;
+        background: var(--cor-neutro-claro);
+        margin-top: 10px;
+        border-radius: 6px;
+        padding: 6px 0;
+    }
+
+    /* Quando JS ativa o dropdown */
+    .dropdown.open .submenu {
+        display: block;
     }
 }
