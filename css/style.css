@@ -239,3 +239,37 @@ button:disabled {
         padding: var(--sp-3);
     }
 }
+
+main section {
+    background: #fff;
+    padding: var(--sp-4);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: var(--sp-4);
+}
+
+main h2 {
+    font-size: var(--fs-xl);
+    color: var(--cor-secundaria);
+    margin-top: 0;
+}
+
+/* IMAGEM DA HOMEPAGE */
+main figure {
+    text-align: center;
+    margin-top: var(--sp-5);
+}
+
+main img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    border: 3px solid var(--cor-acento);
+}
+
+main figcaption {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-md);
+    color: var(--cor-hover);
+}
