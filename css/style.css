@@ -356,3 +356,85 @@ main figcaption {
 .btn-card:hover {
     background: var(--cor-hover);
 }
+
+/* ============================
+   DROPDOWN
+============================ */
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    background: white;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+
+    list-style: none;
+    min-width: 160px;
+    z-index: 10;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: var(--cor-preto);
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background: var(--cor-acento);
+    color: white;
+}
+
+/* Mostrar quando o mouse passar */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
+/* ============================
+   MENU HAMBÚRGUER — MOBILE
+============================ */
+
+.hamburger {
+    font-size: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        color: var(--cor-preto);
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+    }
+
+    .menu.open {
+        display: block;
+        margin-top: 16px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+    }
+}
