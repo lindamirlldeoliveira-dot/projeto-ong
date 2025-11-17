@@ -45,52 +45,37 @@ body {
     padding: var(--sp-4);
 }
 
-/* GARANTE QUE HEADER, MAIN E FOOTER CENTRALIZEM */
 header, main, footer {
     grid-column: 1 / -1;
 }
 
-/* Breakpoints */
-@media (max-width: 1200px) {
-    .container {
-        grid-template-columns: repeat(12, 1fr);
-    }
-}
-
+/* Grid Responsivo */
 @media (max-width: 992px) {
-    .container {
-        grid-template-columns: repeat(8, 1fr);
-    }
+    .container { grid-template-columns: repeat(8, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: repeat(6, 1fr);
-    }
+    .container { grid-template-columns: repeat(6, 1fr); }
 }
 
 @media (max-width: 576px) {
-    .container {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .container { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 400px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .container { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================
-    HEADER PROFISSIONAL
+    HEADER
 ============================ */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--sp-4) var(--sp-2);
-    background-color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     border-radius: 8px;
     margin-bottom: var(--sp-4);
 }
@@ -101,7 +86,7 @@ header h1 {
     margin: 0;
 }
 
-/* MENU */
+/* MENU DESKTOP */
 .menu ul {
     list-style: none;
     display: flex;
@@ -117,33 +102,142 @@ header h1 {
     padding: var(--sp-2) var(--sp-3);
     color: var(--cor-preto);
     border-radius: 6px;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .menu a:hover {
-    background-color: var(--cor-acento);
-    color: #fff;
+    background: var(--cor-acento);
+    color: white;
 }
 
-/* Responsivo do menu */
-@media (max-width: 576px) {
-    header {
-        flex-direction: column;
-        gap: var(--sp-2);
-        text-align: center;
+/* ============================
+   DROPDOWN — DESKTOP
+============================ */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 0;
+    list-style: none;
+    width: 180px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: var(--fs-md);
+    color: var(--cor-preto);
+}
+
+.dropdown-menu a:hover {
+    background: var(--cor-acento);
+    color: white;
+}
+
+/* Hover apenas DESKTOP */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ============================
+   MENU HAMBÚRGUER — MOBILE
+============================ */
+.hamburger {
+    font-size: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        color: var(--cor-preto);
     }
 
     .menu ul {
+        display: none;
         flex-direction: column;
-        gap: var(--sp-2);
+        background: #fff;
         width: 100%;
+        padding: var(--sp-3);
+        border-radius: 8px;
+        margin-top: var(--sp-2);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
-    .menu a {
-        width: 100%;
-        text-align: center;
+    .menu.open ul {
+        display: flex;
+    }
+
+    /* DROPDOWN MOBILE */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: var(--cor-neutro-claro);
+        padding: 0;
+    }
+
+    .dropdown.open .dropdown-menu {
         display: block;
     }
+}
+
+/* ============================
+   SEÇÕES
+============================ */
+main section {
+    background: #fff;
+    padding: var(--sp-4);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: var(--sp-4);
+}
+
+main h2 {
+    font-size: var(--fs-xl);
+    color: var(--cor-secundaria);
+    margin: 0 0 var(--sp-2);
+}
+
+/* ============================
+    IMAGENS DO MAIN
+============================ */
+main figure {
+    text-align: center;
+    margin-top: var(--sp-5);
+}
+
+main img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    border: 3px solid var(--cor-acento);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+main figcaption {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-md);
+    color: var(--cor-hover);
 }
 
 /* ============================
@@ -153,8 +247,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: var(--sp-4);
-    background: white;
     padding: var(--sp-5);
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
@@ -162,28 +256,25 @@ form {
 fieldset {
     border: 2px solid var(--cor-primaria);
     padding: var(--sp-4);
-    border-radius: 8px;
     background: var(--cor-neutro-claro);
+    border-radius: 8px;
 }
 
 legend {
     font-size: var(--fs-lg);
     font-weight: bold;
     color: var(--cor-primaria);
-    padding: 0 var(--sp-2);
 }
 
 label {
     font-size: var(--fs-md);
     font-weight: bold;
     margin-bottom: var(--sp-1);
-    display: block;
 }
 
 input {
     width: 100%;
     padding: var(--sp-2);
-    font-size: var(--fs-md);
     border: 2px solid #ccc;
     border-radius: 8px;
     transition: 0.3s;
@@ -192,7 +283,6 @@ input {
 input:focus {
     border-color: var(--cor-primaria);
     box-shadow: 0 0 5px var(--cor-acento);
-    outline: none;
 }
 
 input:invalid {
@@ -210,7 +300,6 @@ button {
     padding: var(--sp-3);
     border-radius: 8px;
     font-size: var(--fs-lg);
-    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -219,60 +308,8 @@ button:hover {
     background: var(--cor-hover);
 }
 
-button:active {
-    transform: scale(0.97);
-}
-
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-}
-
-@media (max-width: 576px) {
-    form {
-        padding: var(--sp-3);
-    }
-}
-
 /* ============================
-    SEÇÕES DO MAIN
-============================ */
-main section {
-    background: #fff;
-    padding: var(--sp-4);
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    margin-bottom: var(--sp-4);
-}
-
-main h2 {
-    font-size: var(--fs-xl);
-    color: var(--cor-secundaria);
-    margin-top: 0;
-}
-
-/* IMAGENS DO MAIN */
-main figure {
-    text-align: center;
-    margin-top: var(--sp-5);
-}
-
-main img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    border: 3px solid var(--cor-acento);
-}
-
-main figcaption {
-    margin-top: var(--sp-2);
-    font-size: var(--fs-md);
-    color: var(--cor-hover);
-}
-
-/* ============================
-   CARDS DE PROJETOS
+    CARDS DE PROJETOS
 ============================ */
 .cards-projetos {
     display: grid;
@@ -280,785 +317,68 @@ main figcaption {
     gap: var(--sp-4);
 }
 
-/* CARD */
 .card {
     background: #fff;
     border-radius: 12px;
-    overflow: hidden;
     box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-/* Hover */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 
-/* Imagem */
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
 }
 
-/* Conteúdo */
 .card-content {
     padding: var(--sp-4);
 }
 
-/* Título */
 .card-content h3 {
     font-size: var(--fs-lg);
     margin: 0 0 var(--sp-2);
     color: var(--cor-secundaria);
 }
 
-/* Parágrafo */
 .card-content p {
-    font-size: var(--fs-md);
     margin-bottom: var(--sp-3);
+    font-size: var(--fs-md);
 }
 
-/* TAGS */
 .tags {
     display: flex;
     gap: var(--sp-2);
-    margin-bottom: var(--sp-3);
 }
 
 .tag {
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: var(--fs-sm);
     color: white;
+    font-size: var(--fs-sm);
     font-weight: bold;
 }
 
-/* Cores das tags */
 .tag.verde { background: #2ECC71; }
 .tag.azul { background: #2A6F97; }
 .tag.vermelho { background: #E63946; }
 .tag.roxo { background: #6A0572; }
 
-/* BOTÃO DO CARD */
 .btn-card {
     display: inline-block;
+    padding: var(--sp-2) var(--sp-3);
     background: var(--cor-primaria);
     color: white;
-    padding: var(--sp-2) var(--sp-3);
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s ease;
 }
 
 .btn-card:hover {
     background: var(--cor-hover);
-}
-
-/* ============================
-   DROPDOWN
-============================ */
-
-.dropdown {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-
-    background: white;
-    padding: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-
-    list-style: none;
-    min-width: 160px;
-    z-index: 10;
-}
-
-.submenu li a {
-    display: block;
-    padding: 10px;
-    color: var(--cor-preto);
-    text-decoration: none;
-}
-
-.submenu li a:hover {
-    background: var(--cor-acento);
-    color: white;
-}
-
-/* Mostrar quando o mouse passar */
-.dropdown:hover .submenu {
-    display: block;
-}
-
-
-/* ============================
-   MENU HAMBÚRGUER — MOBILE
-============================ */
-
-.hamburger {
-    font-size: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        color: var(--cor-preto);
-    }
-
-    .menu {
-    position: relative;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: var(--sp-3);
-    margin: 0;
-    padding: 0;
-}
-
-/* ============================
-   DROPDOWN (DESKTOP)
-============================ */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-btn {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: 0;
-    background: white;
-    padding: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    list-style: none;
-    width: 180px;
-    z-index: 999;
-}
-
-.submenu li a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--cor-preto);
-}
-
-.submenu li a:hover {
-    background: var(--cor-acento);
-    color: white;
-}
-
-/* Hover só no DESKTOP */
-@media (min-width: 769px) {
-    .dropdown:hover .submenu {
-        display: block;
-    }
-}
-
-/* ============================
-   MENU HAMBÚRGUER (MOBILE)
-============================ */
-
-.hamburger {
-    font-size: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-}
-
-/* Estilos MOBILE */
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        color: var(--cor-preto);
-    }
-
-    .menu ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        padding: var(--sp-3);
-        border-radius: 8px;
-        margin-top: var(--sp-2);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    /* Quando o JS adiciona "open" → menu aparece */
-    .menu.open ul {
-        display: flex;
-    }
-
-    /* DROPDOWN MOBILE */
-    .submenu {
-        position: static;
-        display: none;
-        box-shadow: none;
-        background: var(--cor-neutro-claro);
-        margin-top: 10px;
-        border-radius: 6px;
-        padding: 6px 0;
-    }
-
-    /* Quando JS ativa o dropdown */
-    .dropdown.open .submenu {
-        display: block;
-    }
-}
-/* ============================
-    DESIGN SYSTEM
-============================ */
-:root {
-    --cor-primaria: #2A6F97;
-    --cor-secundaria: #014F86;
-    --cor-acento: #89C2D9;
-    --cor-hover: #1B4965;
-    --cor-sucesso: #2ECC71;
-    --cor-erro: #E63946;
-    --cor-neutro-claro: #f1f1f1;
-    --cor-preto: #111;
-
-    --fs-xxl: 32px;
-    --fs-xl: 28px;
-    --fs-lg: 22px;
-    --fs-md: 18px;
-    --fs-sm: 16px;
-
-    --sp-1: 8px;
-    --sp-2: 16px;
-    --sp-3: 24px;
-    --sp-4: 32px;
-    --sp-5: 48px;
-    --sp-6: 64px;
-}
-
-/* ============================
-    GLOBAL
-============================ */
-body {
-    background-color: var(--cor-neutro-claro);
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ============================
-    GRID PRINCIPAL
-============================ */
-.container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--sp-3);
-    padding: var(--sp-4);
-}
-
-/* GARANTE QUE HEADER, MAIN E FOOTER CENTRALIZEM */
-header, main, footer {
-    grid-column: 1 / -1;
-}
-
-/* Breakpoints */
-@media (max-width: 1200px) {
-    .container {
-        grid-template-columns: repeat(12, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .container {
-        grid-template-columns: repeat(8, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 400px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ============================
-    HEADER PROFISSIONAL
-============================ */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--sp-4) var(--sp-2);
-    background-color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    margin-bottom: var(--sp-4);
-}
-
-header h1 {
-    font-size: var(--fs-xxl);
-    color: var(--cor-primaria);
-    margin: 0;
-}
-
-/* MENU */
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: var(--sp-3);
-    margin: 0;
-    padding: 0;
-}
-
-.menu a {
-    text-decoration: none;
-    font-size: var(--fs-md);
-    font-weight: bold;
-    padding: var(--sp-2) var(--sp-3);
-    color: var(--cor-preto);
-    border-radius: 6px;
-    transition: 0.3s ease;
-}
-
-.menu a:hover {
-    background-color: var(--cor-acento);
-    color: #fff;
-}
-
-/* Responsivo do menu */
-@media (max-width: 576px) {
-    header {
-        flex-direction: column;
-        gap: var(--sp-2);
-        text-align: center;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: var(--sp-2);
-        width: 100%;
-    }
-
-    .menu a {
-        width: 100%;
-        text-align: center;
-        display: block;
-    }
-}
-
-/* ============================
-    FORMULÁRIOS
-============================ */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-4);
-    background: white;
-    padding: var(--sp-5);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-fieldset {
-    border: 2px solid var(--cor-primaria);
-    padding: var(--sp-4);
-    border-radius: 8px;
-    background: var(--cor-neutro-claro);
-}
-
-legend {
-    font-size: var(--fs-lg);
-    font-weight: bold;
-    color: var(--cor-primaria);
-    padding: 0 var(--sp-2);
-}
-
-label {
-    font-size: var(--fs-md);
-    font-weight: bold;
-    margin-bottom: var(--sp-1);
-    display: block;
-}
-
-input {
-    width: 100%;
-    padding: var(--sp-2);
-    font-size: var(--fs-md);
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-input:focus {
-    border-color: var(--cor-primaria);
-    box-shadow: 0 0 5px var(--cor-acento);
-    outline: none;
-}
-
-input:invalid {
-    border-color: var(--cor-erro);
-}
-
-input:valid {
-    border-color: var(--cor-sucesso);
-}
-
-button {
-    background: var(--cor-primaria);
-    color: white;
-    border: none;
-    padding: var(--sp-3);
-    border-radius: 8px;
-    font-size: var(--fs-lg);
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: var(--cor-hover);
-}
-
-button:active {
-    transform: scale(0.97);
-}
-
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-}
-
-@media (max-width: 576px) {
-    form {
-        padding: var(--sp-3);
-    }
-}
-
-/* ============================
-    SEÇÕES DO MAIN
-============================ */
-main section {
-    background: #fff;
-    padding: var(--sp-4);
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    margin-bottom: var(--sp-4);
-}
-
-main h2 {
-    font-size: var(--fs-xl);
-    color: var(--cor-secundaria);
-    margin-top: 0;
-}
-
-/* IMAGENS DO MAIN */
-main figure {
-    text-align: center;
-    margin-top: var(--sp-5);
-}
-
-main img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    border: 3px solid var(--cor-acento);
-}
-
-main figcaption {
-    margin-top: var(--sp-2);
-    font-size: var(--fs-md);
-    color: var(--cor-hover);
-}
-
-/* ============================
-   CARDS DE PROJETOS
-============================ */
-.cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--sp-4);
-}
-
-/* CARD */
-.card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
-}
-
-/* Hover */
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-}
-
-/* Imagem */
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-/* Conteúdo */
-.card-content {
-    padding: var(--sp-4);
-}
-
-/* Título */
-.card-content h3 {
-    font-size: var(--fs-lg);
-    margin: 0 0 var(--sp-2);
-    color: var(--cor-secundaria);
-}
-
-/* Parágrafo */
-.card-content p {
-    font-size: var(--fs-md);
-    margin-bottom: var(--sp-3);
-}
-
-/* TAGS */
-.tags {
-    display: flex;
-    gap: var(--sp-2);
-    margin-bottom: var(--sp-3);
-}
-
-.tag {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: var(--fs-sm);
-    color: white;
-    font-weight: bold;
-}
-
-/* Cores das tags */
-.tag.verde { background: #2ECC71; }
-.tag.azul { background: #2A6F97; }
-.tag.vermelho { background: #E63946; }
-.tag.roxo { background: #6A0572; }
-
-/* BOTÃO DO CARD */
-.btn-card {
-    display: inline-block;
-    background: var(--cor-primaria);
-    color: white;
-    padding: var(--sp-2) var(--sp-3);
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.btn-card:hover {
-    background: var(--cor-hover);
-}
-
-/* ============================
-   DROPDOWN
-============================ */
-
-.dropdown {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
-
-    background: white;
-    padding: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-
-    list-style: none;
-    min-width: 160px;
-    z-index: 10;
-}
-
-.submenu li a {
-    display: block;
-    padding: 10px;
-    color: var(--cor-preto);
-    text-decoration: none;
-}
-
-.submenu li a:hover {
-    background: var(--cor-acento);
-    color: white;
-}
-
-/* Mostrar quando o mouse passar */
-.dropdown:hover .submenu {
-    display: block;
-}
-
-
-/* ============================
-   MENU HAMBÚRGUER — MOBILE
-============================ */
-
-.hamburger {
-    font-size: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        color: var(--cor-preto);
-    }
-
-    .menu {
-    position: relative;
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    gap: var(--sp-3);
-    margin: 0;
-    padding: 0;
-}
-
-/* ============================
-   DROPDOWN (DESKTOP)
-============================ */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-btn {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: 0;
-    background: white;
-    padding: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    list-style: none;
-    width: 180px;
-    z-index: 999;
-}
-
-.submenu li a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--cor-preto);
-}
-
-.submenu li a:hover {
-    background: var(--cor-acento);
-    color: white;
-}
-
-/* Hover só no DESKTOP */
-@media (min-width: 769px) {
-    .dropdown:hover .submenu {
-        display: block;
-    }
-}
-
-/* ============================
-   MENU HAMBÚRGUER (MOBILE)
-============================ */
-
-.hamburger {
-    font-size: 32px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-}
-
-/* Estilos MOBILE */
-@media (max-width: 768px) {
-
-    .hamburger {
-        display: block;
-        color: var(--cor-preto);
-    }
-
-    .menu ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        padding: var(--sp-3);
-        border-radius: 8px;
-        margin-top: var(--sp-2);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    /* Quando o JS adiciona "open" → menu aparece */
-    .menu.open ul {
-        display: flex;
-    }
-
-    /* DROPDOWN MOBILE */
-    .submenu {
-        position: static;
-        display: none;
-        box-shadow: none;
-        background: var(--cor-neutro-claro);
-        margin-top: 10px;
-        border-radius: 6px;
-        padding: 6px 0;
-    }
-
-    /* Quando JS ativa o dropdown */
-    .dropdown.open .submenu {
-        display: block;
-    }
 }
