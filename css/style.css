@@ -144,3 +144,98 @@ header h1 {
         display: block;
     }
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    background: white;
+    padding: var(--sp-5);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Fieldsets */
+fieldset {
+    border: 2px solid var(--cor-primaria);
+    padding: var(--sp-4);
+    border-radius: 8px;
+    background: var(--cor-neutro-claro);
+}
+
+legend {
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    color: var(--cor-primaria);
+    padding: 0 var(--sp-2);
+}
+
+/* Labels */
+label {
+    font-size: var(--fs-md);
+    font-weight: bold;
+    margin-bottom: var(--sp-1);
+    display: block;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: var(--sp-2);
+    font-size: var(--fs-md);
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* foco */
+input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px var(--cor-acento);
+    outline: none;
+}
+
+/* Validação */
+input:invalid {
+    border-color: var(--cor-erro);
+}
+
+input:valid {
+    border-color: var(--cor-sucesso);
+}
+
+/* Botão */
+button {
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: var(--sp-3);
+    border-radius: 8px;
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+button:hover {
+    background: var(--cor-hover);
+}
+
+/* Active */
+button:active {
+    transform: scale(0.97);
+}
+
+/* Disabled */
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+    form {
+        padding: var(--sp-3);
+    }
+}
