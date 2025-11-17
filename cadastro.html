@@ -12,17 +12,37 @@
 <div class="container">
 
     <!-- HEADER PROFISSIONAL -->
-    <header>
-        <h1>Cadastro de Voluntários e Doadores</h1>
+   <header>
 
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>ONG Esperança Viva</h1>
+
+    <!-- BOTÃO HAMBURGUER -->
+    <button class="hamburger" id="btn-mobile">
+        ☰
+    </button>
+
+    <!-- MENU PRINCIPAL -->
+    <nav class="menu" id="menu">
+        <ul>
+
+            <li><a href="index.html">Início</a></li>
+
+            <!-- DROPDOWN -->
+            <li class="dropdown">
+                <a href="projetos.html">Projetos ▼</a>
+
+                <ul class="submenu">
+                    <li><a href="projetos.html#sustentavel">Sustentável</a></li>
+                    <li><a href="projetos.html#doacoes">Doações</a></li>
+                    <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </nav>
+
+</header>
 
     <!-- CONTEÚDO -->
     <main>
@@ -89,3 +109,4 @@
 </div>
 </body>
 </html>
+
