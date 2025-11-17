@@ -1,3 +1,34 @@
+/* ============================
+   🎨 DESIGN SYSTEM
+   ============================ */
+
+:root {
+    /* 🎨 Paleta de Cores (8 cores obrigatórias) */
+    --cor-primaria: #2A6F97;
+    --cor-secundaria: #014F86;
+    --cor-acento: #89C2D9;
+    --cor-hover: #1B4965;
+    --cor-sucesso: #2ECC71;
+    --cor-erro: #E63946;
+    --cor-neutro-claro: #f1f1f1;
+    --cor-preto: #111;
+
+    /* 🔤 Tipografia (5 tamanhos obrigatórios) */
+    --fs-xxl: 32px;
+    --fs-xl: 28px;
+    --fs-lg: 22px;
+    --fs-md: 18px;
+    --fs-sm: 16px;
+
+    /* 📏 Espaçamentos (escala 8px obrigatória) */
+    --sp-1: 8px;
+    --sp-2: 16px;
+    --sp-3: 24px;
+    --sp-4: 32px;
+    --sp-5: 48px;
+    --sp-6: 64px;
+}
+
 body {
-    background-color: red !important;
+    background-color: var(--cor-neutro-claro);
 }
