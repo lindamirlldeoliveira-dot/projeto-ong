@@ -9,51 +9,47 @@
 </head>
 
 <body>
+
 <div class="container">
 
-    <!-- HEADER PROFISSIONAL -->
-   <header>
+    <!-- ====================== HEADER ====================== -->
+    <header>
 
-    <h1>ONG Esperança Viva</h1>
+        <h1>ONG Esperança Viva</h1>
 
-    <!-- BOTÃO HAMBURGUER -->
-    <button class="hamburger" id="btn-mobile">
-        ☰
-    </button>
+        <!-- BOTÃO HAMBÚRGUER -->
+        <button class="hamburger" id="btn-mobile">☰</button>
 
-    <!-- MENU PRINCIPAL -->
-    <nav class="menu" id="menu">
-        <ul>
+        <!-- MENU PRINCIPAL -->
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
 
-            <li><a href="index.html">Início</a></li>
+                <!-- DROPDOWN -->
+                <li class="dropdown">
+                    <span class="dropdown-btn">Projetos ▼</span>
 
-            <!-- DROPDOWN -->
-            <li class="dropdown">
-                <a href="projetos.html">Projetos ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projetos.html#sustentavel">Sustentável</a></li>
+                        <li><a href="projetos.html#doacoes">Doações</a></li>
+                        <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+                    </ul>
+                </li>
 
-                <ul class="submenu">
-                    <li><a href="projetos.html#sustentavel">Sustentável</a></li>
-                    <li><a href="projetos.html#doacoes">Doações</a></li>
-                    <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
-                </ul>
-            </li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
 
-            <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-    </nav>
+    </header>
 
-</header>
-
-    <!-- CONTEÚDO -->
+    <!-- ====================== MAIN ====================== -->
     <main>
 
         <h2>Formulário de Cadastro</h2>
 
         <form>
 
-            <!-- ============================
-                INFORMAÇÕES PESSOAIS
-            ============================= -->
+            <!-- INFORMAÇÕES PESSOAIS -->
             <fieldset>
                 <legend>Informações Pessoais</legend>
 
@@ -68,21 +64,21 @@
                 pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
 
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                <input type="tel" id="telefone" name="telefone"
+                placeholder="(00) 00000-0000"
                 pattern="\(\d{2}\)\s\d{5}-\d{4}" required>
 
                 <label for="data">Data de Nascimento:</label>
                 <input type="date" id="data" name="data" required>
             </fieldset>
 
-            <!-- ============================
-                ENDEREÇO
-            ============================= -->
+            <!-- ENDEREÇO -->
             <fieldset>
                 <legend>Endereço</legend>
 
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" placeholder="00000-000"
+                <input type="text" id="cep" name="cep"
+                placeholder="00000-000"
                 pattern="\d{5}-\d{3}" required>
 
                 <label for="endereco">Endereço:</label>
@@ -92,7 +88,8 @@
                 <input type="text" id="cidade" name="cidade" required>
 
                 <label for="estado">Estado:</label>
-                <input type="text" id="estado" name="estado" maxlength="2" placeholder="SP" required>
+                <input type="text" id="estado" name="estado"
+                maxlength="2" placeholder="SP" required>
             </fieldset>
 
             <button type="submit">Enviar Cadastro</button>
@@ -101,16 +98,15 @@
 
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- ====================== FOOTER ====================== -->
     <footer>
         <p>© 2025 ONG Esperança Viva</p>
     </footer>
 
 </div>
-    <script src="js/script.js"></script>
-    <script src="js/menu.js"></script>
+
+<!-- SCRIPTS CORRETOS -->
+<script src="js/menu.js"></script>
+
 </body>
 </html>
-
-
-
