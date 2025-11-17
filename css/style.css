@@ -1,5 +1,6 @@
-
-
+/* ============================
+    DESIGN SYSTEM
+============================ */
 :root {
     --cor-primaria: #2A6F97;
     --cor-secundaria: #014F86;
@@ -15,7 +16,7 @@
     --fs-lg: 22px;
     --fs-md: 18px;
     --fs-sm: 16px;
-   
+
     --sp-1: 8px;
     --sp-2: 16px;
     --sp-3: 24px;
@@ -24,10 +25,19 @@
     --sp-6: 64px;
 }
 
+/* ============================
+    GLOBAL
+============================ */
 body {
     background-color: var(--cor-neutro-claro);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ============================
+    GRID PRINCIPAL
+============================ */
 .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -35,6 +45,7 @@ body {
     padding: var(--sp-4);
 }
 
+/* Breakpoints */
 @media (max-width: 1200px) {
     .container {
         grid-template-columns: repeat(12, 1fr);
@@ -65,62 +76,71 @@ body {
     }
 }
 
+/* ============================
+    HEADER PROFISSIONAL
+============================ */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--sp-3) 0;
-    border-bottom: 2px solid var(--cor-primaria);
+    padding: var(--sp-4) var(--sp-2);
+    background-color: #fff;
+
+    /* Sombra moderna */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+    border-radius: 8px;
+    margin-bottom: var(--sp-4);
 }
 
 header h1 {
-    font-size: var(--fs-xl);
+    font-size: var(--fs-xxl);
     color: var(--cor-primaria);
-    font-weight: bold;
+    margin: 0;
 }
 
-/* MENU LISTA */
+/* MENU */
 .menu ul {
     list-style: none;
     display: flex;
     gap: var(--sp-3);
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-/* LINKS */
 .menu a {
     text-decoration: none;
     font-size: var(--fs-md);
     font-weight: bold;
-    color: var(--cor-preto);
     padding: var(--sp-2) var(--sp-3);
+    color: var(--cor-preto);
     border-radius: 6px;
     transition: 0.3s ease;
 }
 
-/* Hover elegante */
+/* Hover bonito */
 .menu a:hover {
     background-color: var(--cor-acento);
-    color: white;
+    color: #fff;
 }
 
-/* RESPONSIVO - MENU VERTICAL NO MOBILE */
+/* Responsivo */
 @media (max-width: 576px) {
     header {
         flex-direction: column;
         gap: var(--sp-2);
+        text-align: center;
     }
 
     .menu ul {
         flex-direction: column;
-        width: 100%;
         gap: var(--sp-2);
+        width: 100%;
     }
 
     .menu a {
-        display: block;
-        text-align: center;
         width: 100%;
+        text-align: center;
+        display: block;
     }
 }
