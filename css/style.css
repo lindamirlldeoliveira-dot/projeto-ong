@@ -1,6 +1,4 @@
-/* ============================
-    DESIGN SYSTEM
-============================ */
+
 :root {
     --cor-primaria: #2A6F97;
     --cor-secundaria: #014F86;
@@ -25,9 +23,7 @@
     --sp-6: 64px;
 }
 
-/* ============================
-    GLOBAL
-============================ */
+
 body {
     background: var(--cor-neutro-claro);
     margin: 0;
@@ -46,9 +42,7 @@ header, main, footer {
     grid-column: 1 / -1;
 }
 
-/* ============================
-    HEADER BONITO RESTAURADO
-============================ */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -66,9 +60,7 @@ header h1 {
     font-size: var(--fs-xxl);
 }
 
-/* ============================
-    MENU ORIGINAL BONITO
-============================ */
+
 .menu ul {
     list-style: none;
     display: flex;
@@ -92,9 +84,7 @@ header h1 {
     color: #fff;
 }
 
-/* ============================
-    DROPDOWN — DESKTOP
-============================ */
+
 .dropdown {
     position: relative;
 }
@@ -128,16 +118,13 @@ header h1 {
     color: #fff;
 }
 
-/* Hover só no desktop */
 @media (min-width: 769px) {
     .dropdown:hover .dropdown-menu {
         display: block;
     }
 }
 
-/* ============================
-    MENU HAMBURGUER — MOBILE
-============================ */
+
 .hamburger {
     display: none;
     font-size: 32px;
@@ -181,9 +168,7 @@ header h1 {
     }
 }
 
-/* ============================
-    SEÇÕES DO MAIN (BONITAS)
-============================ */
+
 main section {
     background: #fff;
     padding: var(--sp-4);
@@ -197,9 +182,7 @@ main h2 {
     color: var(--cor-secundaria);
 }
 
-/* ============================
-    IMAGENS BONITAS
-============================ */
+
 main img {
     max-width: 600px;
     width: 100%;
@@ -208,9 +191,7 @@ main img {
     border: 3px solid var(--cor-acento);
 }
 
-/* ============================
-    CARDS DOS PROJETOS (BONITOS)
-============================ */
+
 .cards-projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -240,7 +221,6 @@ main img {
     padding: var(--sp-4);
 }
 
-/* botão do card */
 .btn-card {
     display: inline-block;
     text-decoration: none;
